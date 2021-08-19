@@ -1,24 +1,56 @@
-import logo from './logo.svg';
 import './App.css';
+import SurveyData from './SurveyData/SurveyData';
+import Header from './Header/Header';
+import SignUpForm from './SignUpForm/SignUpForm';
+import Home from './Home/Home';
+import Results from './Results/Results';
+import Survey from './Survey/Survey';
+import { useState } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 function App() {
+  const [name, setName] = useState("");
+  const [questions, setQuestions] = useState();
+  const [results, setResults] = useState();
+
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Header />
       </header>
+      <div className="survey-body">
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/sign-up" exact>
+            <SignUpForm 
+              name={name}
+              setName={setName}
+            />
+          </Route>
+          <Route path="/survey" exact>
+            <Survey 
+              surveyData={SurveyData}
+              results={results}
+              setResults={setResults}
+            />
+          </Route>
+          <Route path="/results" exact>
+            <Results 
+              results={results}
+              setResults={setResults}
+              name={name}
+              setName={setName}
+              surveyData={SurveyData}
+            />
+          </Route>
+        </Switch>
+      </div>
     </div>
+    </BrowserRouter>
+    
   );
 }
 

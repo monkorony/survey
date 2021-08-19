@@ -1,38 +1,53 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto&display=swap");
+
+.hdr {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  color: #3f51b5;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  max-width: 120px;
+  margin: 20px auto 0;
+  border: 2px solid #3f51b5;
+  box-shadow: 4px 4px 0px #3f51b5;
+}
+/* Sign up form */
+.sign-up-form {
+  display: flex;
+  flex-flow: column;
+  max-width: 300px;
+  margin: 30px auto 0;
+}
+body .MuiFormControl-root {
+  margin-bottom: 20px;
+}
+.sign-up-form h3 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Survey */
+.survey-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
+  max-width: 300px;
+  margin: 30px auto 0;
+}
+.options {
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Home */
+.home {
+  max-width: 300px;
+  margin: 30px auto 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home h3,
+.home p {
+  text-align: center;
+}
+.home a {
+  width: 100%;
+  margin-top: 20px;
 }
